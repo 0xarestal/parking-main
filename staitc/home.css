@@ -1,0 +1,99 @@
+/* General Body Styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #eaeaea; /* Light grey background */
+    color: #333; /* Dark grey text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styling */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header Styling */
+.header {
+    background-color: #1e1e1e; /* Very dark grey (almost black) */
+    color: #f4f4f4; /* Light grey text */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Strong shadow */
+}
+
+/* Status Box Styling */
+.status {
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Light grey border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    background: linear-gradient(135deg, #ffcccb, #d3b1b1); /* Gradient background */
+}
+
+/* Lead Text Styling */
+.lead {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007bff; /* Bright blue for a pop of color */
+}
+
+/* Empty Spots Styling */
+.empty-spots {
+    font-size: 1.2em;
+    color: #ff6f61; /* Coral color for visual interest */
+}
+
+/* Graph Container Styling */
+.graph {
+    text-align: center;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #dce3e8, #b3c7d6); /* Gradient background */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Graph Image Styling */
+.graph img {
+    width: 100%;
+    max-width: 900px;
+    border: 3px solid #333; /* Dark grey border */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background */
+    color: #f4f4f4; /* Light text */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    position: relative;
+}
+
+/* Decorative Elements */
+.footer::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(135deg, #ff5722, #ffcccb);
+    margin: 0 auto 10px;
+    border-radius: 10px;
+}
+
+/* Copyright Text */
+.footer p {
+    margin: 0;
+    font-size: 1em;
+    color: #f4f4f4;
+    font-style: italic;
+}
