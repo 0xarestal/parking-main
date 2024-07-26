@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Monitor - Location 2 (Prototype)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Parking Monitor - Location 2 (Prototype)</h1>
+        </div>
+        <div class="status" id="status">
+            <p class="lead">Free Spots: <span id="free-spots">0</span> / Total Spots: <span id="total-spots">0</span></p>
+            <p class="empty-spots">Empty Spots: <span id="empty-spots"></span></p>
+        </div>
+        <div class="graph">
+            <h2>Parking Trend</h2>
+            <img id="parking-graph" src="/get_graph" alt="Parking Trend Graph">
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Suryansh Singh. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function updateStatus() {
+                $.getJSON("/get_overall_status", function(data) {
+                    $("#free-spots").text(data.free);
+                    $("#total-spots").text(data.total);
+                    $("#empty-spots").text(data.empty.join(', '));
+                });
+            }
+            
+            function refreshGraph() {
+                // Append a timestamp to the image URL to force reload
+                $("#parking-graph").attr("src", "/get_graph?" + new Date().getTime());
+            }
+
+            // Update status every 200 ms
+            setInterval(updateStatus, 200);
+
+            // Refresh graph every 30 seconds
+            setInterval(refreshGraph, 30000); 
+        });
+    </script>
+</body>
+</html>
