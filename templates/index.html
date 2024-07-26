@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .location-select {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            -webkit-appearance: none; 
+            -moz-appearance: none; 
+            appearance: none; 
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        select::-ms-expand {
+            display: none; 
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Parking Monitor</h1>
+        </div>
+        <div class="location-select">
+            <label for="location">Select Location:</label>
+            <select id="location" name="location">
+                <option value="location1">Location 1</option>
+                <option value="prototype">Location 2 (Prototype)</option>
+            </select>
+            <button onclick="redirectToSelectedLocation()">Go</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        // Redirect function
+        function redirectToSelectedLocation() {
+            var selectedLocation = $("#location").val();
+            window.location.href = "/" + selectedLocation;
+        }
+    </script>
+</body>
+</html>
